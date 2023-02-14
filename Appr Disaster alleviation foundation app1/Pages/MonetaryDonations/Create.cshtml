@@ -1,0 +1,64 @@
+﻿@page
+@model Appr_Disaster_alleviation_foundation_app1.Pages.MonetaryDonations.CreateModel
+@{
+}
+
+<br>
+<h2>New monetary donation</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        <strong>@Model.errorMessage</strong>
+        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+
+}
+
+<form method="post">
+    <div class=" row mb-3">
+        <label class=" col-sm-3 col-form-label">Donor name</label>
+        <div class=" col-sm-6">
+            <input type="text" class="form-control" name="donorname" value="@Model.monetaryInfo.DONORNAME">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class=" col-sm-3 col-form-label">Date</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="date" value="@Model.monetaryInfo.DATE">
+        </div>
+    </div>
+    <div class=" row mb-3">
+        <label class=" col-sm-3 col-form-label">Amount</label>
+        <div class=" col-sm-6">
+            <input type="text" class="form-control" name="amount" value="@Model.monetaryInfo.AMOUNT">
+        </div>
+    </div>
+    
+
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="row mb-9">
+                <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                    <strong>@Model.successMessage</strong>
+                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                </div>
+            </div>
+        </div>
+
+    }
+
+    <div class="row-mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class=" col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+        </div>
+
+
+    </div>
+
+</form>
+

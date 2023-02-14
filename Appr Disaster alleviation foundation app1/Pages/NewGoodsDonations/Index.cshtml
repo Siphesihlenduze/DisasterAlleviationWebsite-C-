@@ -1,0 +1,41 @@
+﻿@page
+@model Appr_Disaster_alleviation_foundation_app1.Pages.NewGoodsDonations.IndexModel
+@{
+}
+
+<br>
+<h2>List of donations</h2>
+<a class='btn btn-primary btn-sm' href='/NewGoodsDonations/Create'>New good donations</a>
+<table class="table"
+       <thead>
+           <tr>
+               <th>ID</th>
+               <th>Description</th>
+               <th>Category</th>
+               <th>Number of items</th>
+               <th>Date</th>
+               <th>Action</th>
+
+           </tr>
+</thead>
+<tbody>
+@foreach(var item in Model.listgoods)
+            {
+    <tr>
+        <td>@item.ID</td>
+        <td>@item.DESCRIPTION</td>
+        <td>@item.CATEGORY</td>
+        <td>@item.NUMBEROFITEMS</td>
+        <td>@item.DATE</td>
+        
+        <td>
+            <a class='btn btn-primary btn-sm' href='/NewGoodsDonations/Edit?id=@item'>Edit</a>
+            <a class='btn btn-danger btn-sm' href='/NewGoodsDonations/Delete?id=@item'>Delete</a>
+
+        </td>
+
+
+    </tr>
+            }
+</tbody>
+</table> 

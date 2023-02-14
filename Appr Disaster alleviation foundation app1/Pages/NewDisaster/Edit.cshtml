@@ -1,0 +1,87 @@
+﻿@page
+@model Appr_Disaster_alleviation_foundation_app1.Pages.NewDisaster.EditModel
+@{
+}
+
+<br>
+<h2>Edit disaster</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        <strong>@Model.errorMessage</strong>
+        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+
+}
+
+<form method="post">
+    <input type="hidden" name="ID" value="@Model.disasterinfo.ID">
+    <div class=" row mb-3">
+        <label class=" col-sm-3 col-form-label">Description</label>
+        <div class=" col-sm-6">
+            <input type="text" class="form-control" name="description" value="@Model.disasterinfo.DESCRIPTION">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class=" col-sm-3 col-form-label"> Required aid type</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="reqaidtype" value="@Model.disasterinfo.REQAIDTYPE">
+        </div>
+    </div>
+    <div class=" row mb-3">
+        <label class=" col-sm-3 col-form-label">Disaster location</label>
+        <div class=" col-sm-6">
+            <input type="text" class="form-control" name="disasterlocation" value="@Model.disasterinfo.DISASTERLOC">
+        </div>
+    </div>
+    <div class=" row mb-3">
+        <label class=" col-sm-3 col-form-label">Disaster start date</label>
+        <div class=" col-sm-6">
+            <input type="text" class="form-control" name="disasterstartdate" value="@Model.disasterinfo.DISASTERSTARTDATE">
+        </div>
+    </div>
+    <div class=" row mb-3">
+        <label class=" col-sm-3 col-form-label">Disaster end date</label>
+        <div class=" col-sm-6">
+            <input type="text" class="form-control" name="disasterenddate" value="@Model.disasterinfo.DISASTERENDDATE">
+        </div>
+    </div>
+    <div class=" row mb-3">
+        <label class=" col-sm-3 col-form-label">Disaster end date</label>
+        <div class=" col-sm-6">
+            <input type="text" class="form-control" name="allocatemoney" value="@Model.disasterinfo.ALLOCATEMONEY">
+        </div>
+    </div>
+    <div class=" row mb-3">
+        <label class=" col-sm-3 col-form-label">Disaster end date</label>
+        <div class=" col-sm-6">
+            <input type="text" class="form-control" name="allocategoods" value="@Model.disasterinfo.ALLOCATEGOODS">
+        </div>
+    </div>
+
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="row mb-9">
+                <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                    <strong>@Model.successMessage</strong>
+                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                </div>
+            </div>
+        </div>
+
+    }
+
+    <div class="row-mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class=" col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+        </div>
+
+
+    </div>
+
+</form>

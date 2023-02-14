@@ -1,0 +1,106 @@
+﻿@page
+@model Appr_Disaster_alleviation_foundation_app1.Pages.InformationPublic.IndexModel
+@{
+}
+
+<br>
+<h1>Public information pertaining donations, goods and disasters</h1>
+<br>
+<h2>Disasters recorded</h2>
+<table class="table"
+       <thead>
+           <tr>
+               <th>ID</th>
+               <th>Description</th>
+               <th>Required aid type</th>
+               <th>Disaster location</th>
+               <th>Disaster start date</th>
+               <th>Disaster end date</th>
+               <th>Allocated money</th>
+               <th>Allocated goods</th>
+               <th>Created at</th>
+               
+
+           </tr>
+</thead>
+<tbody>
+@foreach(var item in Model.listdisasters)
+            {
+    <tr>
+        <td>@item.ID</td>
+        <td>@item.DESCRIPTION</td>
+        <td>@item.REQAIDTYPE</td>
+        <td>@item.DISASTERLOC</td>
+        <td>@item.DISASTERSTARTDATE</td>
+        <td>@item.DISASTERENDDATE</td>
+        <td>@item.ALLOCATEMONEY </td>
+        <td>@item.ALLOCATEGOODS</td>
+        <td>@item.CREATED_AT</td>
+        
+
+
+    </tr>
+            }
+</tbody>
+</table>
+
+<br>
+<h2>Goods recieved</h2>
+<table class="table"
+       <thead>
+           <tr>
+               <th>ID</th>
+               <th>Description</th>
+               <th>Category</th>
+               <th>Number of items</th>
+               <th>Date</th>
+              
+
+           </tr>
+</thead>
+<tbody>
+@foreach(var item in Model.listgoods)
+            {
+    <tr>
+        <td>@item.ID</td>
+        <td>@item.DESCRIPTION</td>
+        <td>@item.CATEGORY</td>
+        <td>@item.NUMBEROFITEMS</td>
+        <td>@item.DATE</td>
+
+        
+
+
+    </tr>
+            }
+</tbody>
+</table>
+
+<br>
+<h2>Monetary donations recieved</h2>
+<table class="table"
+       <thead>
+           <tr>
+               <th>ID</th>
+               <th>Donor name</th>
+               <th>Date</th>
+               <th>Amount</th>
+               
+
+           </tr>
+</thead>
+<tbody>
+@foreach(var item in Model.listmonetary)
+            {
+    <tr>
+        <td>@item.ID</td>
+        <td>@item.DONORNAME</td>
+        <td>@item.DATE</td>
+        <td>@item.AMOUNT</td>
+        
+
+
+    </tr>
+            }
+</tbody>
+</table> 

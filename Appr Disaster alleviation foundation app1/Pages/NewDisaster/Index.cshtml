@@ -1,0 +1,49 @@
+﻿@page
+@model Appr_Disaster_alleviation_foundation_app1.Pages.NewDisaster.IndexModel
+@{
+}
+
+<br>
+<h2>List of disasters</h2>
+<a class='btn btn-primary btn-sm' href='/NewDisaster/Create'>New Disaster</a>
+<table class="table"
+       <thead>
+           <tr>
+               <th>ID</th>
+               <th>Description</th>
+               <th>Required aid type</th>
+               <th>Disaster location</th>
+               <th>Disaster start date</th>
+               <th>Disaster end date</th>
+               <th>Allocated money</th>
+               <th>Allocated goods</th>
+               <th>Created at</th>
+               <th>Action</th>
+
+           </tr>
+</thead>
+<tbody>
+@foreach(var item in Model.listdisasters)
+            {
+    <tr>
+        <td>@item.ID</td>
+        <td>@item.DESCRIPTION</td>
+        <td>@item.REQAIDTYPE</td>
+        <td>@item.DISASTERLOC</td>
+        <td>@item.DISASTERSTARTDATE</td>
+        <td>@item.DISASTERENDDATE</td>
+        <td>@item.ALLOCATEMONEY </td>
+        <td>@item.ALLOCATEGOODS</td>
+        <td>@item.CREATED_AT</td>
+        <td>
+            <a class='btn btn-primary btn-sm' href='/NewDisaster/Edit?id=@item'>Edit</a>
+            <a class='btn btn-danger btn-sm' href='/NewDisaster/Delete?id=@item'>Delete</a>
+
+        </td>
+
+
+    </tr>
+            }
+</tbody>
+</table> 
+

@@ -1,0 +1,28 @@
+﻿@page
+@model Appr_Disaster_alleviation_foundation_app1.Pages.NewDonationsModel
+@{
+    ViewData["Title"] = "New monetary donations";
+}
+
+<h3>New monetary donations</h3>
+
+<div class="container">
+
+    <form method="POST">
+        <label for="Dname">Donor name</label><br>
+        <input type="text" id="Dname" name="donorname"><br>
+
+        <label for="Ddate">Date</label><br>
+        <input type="text" id="Ddate" name="donationdate"><br>
+
+        <label for="Damount">Amount</label><br>
+        <input type="text" id="Damount" name="donationamount"><br>
+
+        <input type="submit" value="Submit">
+
+
+    </form>
+    <img class="background" src="~/lib/bootstrap/Images/DAF1.jpg" />
+</div>
+
+

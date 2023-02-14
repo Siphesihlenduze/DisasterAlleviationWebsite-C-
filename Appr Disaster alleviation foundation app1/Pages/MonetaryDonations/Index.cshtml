@@ -1,0 +1,38 @@
+﻿@page
+@model Appr_Disaster_alleviation_foundation_app1.Pages.MonetaryDonations.IndexModel
+@{
+}
+
+<br>
+<h2>List of monetary donations</h2>
+<a class='btn btn-primary btn-sm' href='/MonetaryDonations/Create'>New Disaster</a>
+<table class="table"
+       <thead>
+           <tr>
+               <th>ID</th>
+               <th>Donor name</th>
+               <th>Date</th>
+               <th>Amount</th>
+               <th>Action</th>
+
+           </tr>
+</thead>
+<tbody>
+@foreach(var item in Model.listmonetary)
+            {
+    <tr>
+        <td>@item.ID</td>
+        <td>@item.DONORNAME</td>
+        <td>@item.DATE</td>
+        <td>@item.AMOUNT</td>
+        <td>
+            <a class='btn btn-primary btn-sm' href='/MonetaryDonations/Edit?id=@item'>Edit</a>
+            <a class='btn btn-danger btn-sm' href='/MonetaryDonations/Delete?id=@item'>Delete</a>
+
+        </td>
+
+
+    </tr>
+            }
+</tbody>
+</table> 
